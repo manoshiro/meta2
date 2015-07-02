@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["manabu.oshiro@zinbun.com"]
   spec.summary       = %q{Implementation of the order to easily manage the meta-information.}
   spec.description   = %q{Implementation of the order to easily manage the meta-information for enginners and service managers.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/manoshiro/meta2"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
