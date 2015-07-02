@@ -1,0 +1,15 @@
+ja:
+  meta2:
+    formats:
+      title:        '%'
+      description:  '%'
+    defaults:
+      title:        'Default title.'
+      description:  'Default description.'
+      keywords:     'Default keyword.'
+    sections:
+      welcome:
+        root:
+          title:        'Title for top page of your serivce.'
+          description:  'Description for top page of your service.'
+
