@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["manabu.oshiro"]
   spec.email         = ["manabu.oshiro@zinbun.com"]
   spec.summary       = %q{Implementation of the order to easily manage the meta-information.}
-  spec.description   = %q{Implementation of the order to easily manage the meta-information for enginners and service managers.}
+  spec.description   = %q{Implementation of the order to easily manage the meta-information for engineers and service managers. When your write i18n file or manage database through active record, put on it is reflected meta information on html.}
   spec.homepage      = "https://github.com/manoshiro/meta2"
   spec.license       = "MIT"
 
