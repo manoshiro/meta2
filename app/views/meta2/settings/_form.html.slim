@@ -1,0 +1,35 @@
+= form_for [:admins, @meta_setting], html: {class: 'form-horizontal'} do |form|
+
+  .form-group
+    label.col-xs-2.control-label = cm 'meta2/models/meta_setting.app_name'
+    .col-xs-10
+      = form.text_field :app_name, class: 'form-control'
+
+  .form-group
+    label.col-xs-2.control-label = cm 'meta2/models/meta_setting.section'
+    .col-xs-10
+      = form.text_field :section, class: 'form-control'
+
+  .form-group
+    label.col-xs-2.control-label = cm 'meta2/models/meta_setting.path'
+    .col-xs-10
+      = form.text_field :path, class: 'form-control'
+
+  .form-group
+    label.col-xs-2.control-label = cm 'meta2/models/meta_setting.name'
+    .col-xs-10
+      = form.text_field :name, class: 'form-control'
+
+  .form-group
+    label.col-xs-2.control-label = cm 'meta2/models/meta_setting.value'
+    .col-xs-10
+      = form.text_field :value, class: 'form-control'
+
+  .form-group
+    label.col-xs-2.control-label = cm 'meta2/models/meta_setting.note'
+    .col-xs-10
+      = form.text_field :note, class: 'form-control'
+
+  .form-group
+    .col-xs-10.col-xs-offset-2
+      = form.submit I18n.t('meta2.setting.submit'), class: 'btn btn-warning'

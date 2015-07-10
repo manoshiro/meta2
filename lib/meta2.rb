@@ -1,4 +1,5 @@
 require 'active_support/dependencies'
+require 'meta2/engine'
 
 module Meta2
   autoload :Absorber,   'meta2/absorber'
