@@ -1,6 +1,7 @@
 module Meta2
   class SettingsController < Meta2.config.controller_base.constantize
     helper Meta2::ApplicationHelper
+    helper_method :app_name_from_session
 
     before_action :set_setting, only: [:edit, :update, :destroy]
 
@@ -20,6 +21,7 @@ module Meta2
     def create
       @setting = settings_base.new setting_params
       if @setting.valid?(:pre_check) && @setting.save(context: @setting.section.to_sym)
+        session[Meta2.config.session_name] = @setting.app_name
         redirect_to edit_setting_path(@setting), notice: I18n.t('meta2.setting.message.created')
       else
         render :new
@@ -48,14 +50,14 @@ module Meta2
     end
 
     def change_app
-      setting = Setting.find_by app_name: params[:id]
+      setting = Setting.find_by app_name: params[:app_name]
       if setting.blank?
         not_found and return
       end
 
-      session[Meta2.config.session_name] = params[:id]
+      session[Meta2.config.session_name] = params[:app_name]
 
-      redirect_to admisn_meta_settings_path
+      redirect_to settings_path
     end
 
 

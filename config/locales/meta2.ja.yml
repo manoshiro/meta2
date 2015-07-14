@@ -18,6 +18,10 @@ ja:
         formats:  'フォーマット'
         defaults: 'デフォルト'
         parts:    'パーツ'
+      defaults:
+        title:        'タイトル'
+        description:  'デスクリプション'
+        keywords:     'キーワード'
     formats:
       title:        '%'
       description:  '%'

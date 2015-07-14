@@ -23,7 +23,7 @@
   .form-group
     label.col-xs-2.control-label = Meta2::Setting.human_attribute_name :name
     .col-xs-10
-      = form.select :name, options_for_select(I18n.t('meta2.defaults').invert, selected: form.object.name), {}, class: 'form-control', disabled: form.object.persisted?
+      = form.select :name, options_for_select(I18n.t('meta2.setting.defaults').invert, selected: form.object.name), {}, class: 'form-control', disabled: form.object.persisted?
 
   .form-group
     label.col-xs-2.control-label = Meta2::Setting.human_attribute_name :value

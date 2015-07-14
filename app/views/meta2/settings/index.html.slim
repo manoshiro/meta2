@@ -3,7 +3,7 @@
 
   ul.list-unstyled.list-inline
     - Meta2::Setting.app_names.each do |app_name|
-      li = link_to app_name, change_app_settings_path, class: 'btn btn-default'
+      li = link_to app_name, change_app_settings_path(app_name: app_name), class: "btn btn-#{app_name == app_name_from_session ? 'primary' : 'default'}", method: :post
     li.pull-right = link_to I18n.t('meta2.setting.new'), new_setting_path, class: 'btn btn-default'
 
 
