@@ -1,7 +1,10 @@
 tr
-  td = record.app_name
   td = record.section
   td = record.path
   td = record.name
   td = record.value
   td = record.note
+  td
+    .btn-group
+      = link_to I18n.t('meta2.setting.edit'), edit_setting_path(record), class: 'btn btn-default'
+      = link_to I18n.t('meta2.setting.destroy'), setting_path(record), class: 'btn btn-default', method: :delete, data: {confirm: I18n.t('meta2.setting.message.destroy')}

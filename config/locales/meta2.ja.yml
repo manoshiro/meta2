@@ -1,0 +1,43 @@
+ja:
+  meta2:
+    setting:
+      new:      '新規作成'
+      edit:     '編集'
+      destroy:  '削除'
+      submit:   '送信する'
+      message:
+        created:    '新しい情報を作成しました'
+        updated:    '情報を更新しました'
+        destroyed:  '情報を削除しました'
+        destroy: |-
+          情報を削除しますか？
+          削除すると元に戻せません。
+        not_destroy: 'フォーマット、デフォルト値は削除出来ません'
+        incorrect_format_for_formats_value: 'フォーマットの値には"%"を含めてください'
+      sections:
+        formats:  'フォーマット'
+        defaults: 'デフォルト'
+        parts:    'パーツ'
+    formats:
+      title:        '%'
+      description:  '%'
+    defaults:
+      title:        'タイトル'
+      description:  'デスクリプション'
+      keywords:     'キーワード'
+    sections:
+      welcome:
+        root:
+          title:        'Title for top page of your serivce.'
+          description:  'Description for top page of your service.'
+  activerecord:
+    models:
+      meta2/setting: 'メタ情報'
+    attributes:
+      meta2/setting:
+        app_name: 'アプリ識別'
+        section:  'セクション'
+        path:     'パス'
+        name:     '名前'
+        value:    '値'
+        note:     'メモ'

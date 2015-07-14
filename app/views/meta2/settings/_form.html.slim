@@ -1,32 +1,37 @@
-= form_for [:admins, @meta_setting], html: {class: 'form-horizontal'} do |form|
+= form_for @setting, html: {class: 'form-horizontal'} do |form|
+
+  - if form.object.errors.any?
+    ul.list-unstyled.alert.alert-danger
+      - form.object.errors.full_messages.each do |message|
+        li = message
 
   .form-group
-    label.col-xs-2.control-label = cm 'meta2/models/meta_setting.app_name'
+    label.col-xs-2.control-label = Meta2::Setting.human_attribute_name :app_name
     .col-xs-10
-      = form.text_field :app_name, class: 'form-control'
+      = form.text_field :app_name, class: 'form-control', disabled: form.object.persisted?
 
   .form-group
-    label.col-xs-2.control-label = cm 'meta2/models/meta_setting.section'
+    label.col-xs-2.control-label = Meta2::Setting.human_attribute_name :section
     .col-xs-10
-      = form.text_field :section, class: 'form-control'
+      = form.select :section, options_of_section_from_meta2_settings_for_select(form), {}, class: 'form-control', disabled: form.object.persisted?
 
   .form-group
-    label.col-xs-2.control-label = cm 'meta2/models/meta_setting.path'
+    label.col-xs-2.control-label = Meta2::Setting.human_attribute_name :path
     .col-xs-10
-      = form.text_field :path, class: 'form-control'
+      = form.text_field :path, class: 'form-control', disabled: (form.object.persisted? && !form.object.parts?)
 
   .form-group
-    label.col-xs-2.control-label = cm 'meta2/models/meta_setting.name'
+    label.col-xs-2.control-label = Meta2::Setting.human_attribute_name :name
     .col-xs-10
-      = form.text_field :name, class: 'form-control'
+      = form.select :name, options_for_select(I18n.t('meta2.defaults').invert, selected: form.object.name), {}, class: 'form-control', disabled: form.object.persisted?
 
   .form-group
-    label.col-xs-2.control-label = cm 'meta2/models/meta_setting.value'
+    label.col-xs-2.control-label = Meta2::Setting.human_attribute_name :value
     .col-xs-10
       = form.text_field :value, class: 'form-control'
 
   .form-group
-    label.col-xs-2.control-label = cm 'meta2/models/meta_setting.note'
+    label.col-xs-2.control-label = Meta2::Setting.human_attribute_name :note
     .col-xs-10
       = form.text_field :note, class: 'form-control'
 
