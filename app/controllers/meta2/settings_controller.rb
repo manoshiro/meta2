@@ -1,6 +1,7 @@
 module Meta2
   class SettingsController < Meta2.config.controller_base.constantize
     def index
+      @settings = settings_base.:q
     end
   end
 

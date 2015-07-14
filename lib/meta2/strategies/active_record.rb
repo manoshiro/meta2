@@ -43,7 +43,7 @@ module Meta2
       end
 
       def targets
-        Meta2::Models::MetaSetting.where app_name: @config[:assign_name]
+        Meta2::Setting.where app_name: @config[:assign_name]
       end
     end
   end
