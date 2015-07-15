@@ -1,6 +1,6 @@
 .page-header
   h1
     span.pull-right = I18n.t 'meta2.setting.edit', name: cm('meta2/setting')
-    small = link_to 'Back', settings_path, class: 'btn btn-default btn-sm'
+    small = link_to 'Back', settings_path(section: @setting.section), class: 'btn btn-default btn-sm'
 
 = render 'form'

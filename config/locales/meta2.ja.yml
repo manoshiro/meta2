@@ -14,6 +14,7 @@ ja:
           削除すると元に戻せません。
         not_destroy: 'フォーマット、デフォルト値は削除出来ません'
         incorrect_format_for_formats_value: 'フォーマットの値には"%"を含めてください'
+        activerecord_limited: 'Please choise `activerecord` strategy'
       sections:
         formats:  'フォーマット'
         defaults: 'デフォルト'
@@ -22,18 +23,19 @@ ja:
         title:        'タイトル'
         description:  'デスクリプション'
         keywords:     'キーワード'
-    formats:
-      title:        '%'
-      description:  '%'
-    defaults:
-      title:        'タイトル'
-      description:  'デスクリプション'
-      keywords:     'キーワード'
-    sections:
-      welcome:
-        root:
-          title:        'Title for top page of your serivce.'
-          description:  'Description for top page of your service.'
+    config:
+      formats:
+        title:        '%'
+        description:  '%'
+      defaults:
+        title:        'タイトル'
+        description:  'デスクリプション'
+        keywords:     'キーワード'
+      sections:
+        welcome:
+          root:
+            title:        'Title for top page of your serivce.'
+            description:  'Description for top page of your service.'
   activerecord:
     models:
       meta2/setting: 'メタ情報'

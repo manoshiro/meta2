@@ -25,7 +25,7 @@ module Meta2
 
     def build_path(prefix)
       path_prefix = prefix.gsub '/', '.'
-      '%s.parts.%s.%s' % [
+      '%s.config.parts.%s.%s' % [
         @config.assign_name, path_prefix, @options[:template]
       ]
     end

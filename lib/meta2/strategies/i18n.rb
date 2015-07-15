@@ -28,7 +28,7 @@ module Meta2
       private
 
       def catch_path(namespace)
-        path = "#{@config.assign_name}.#{namespace}"
+        path = "#{@config.assign_name}.config.#{namespace}"
         Meta2.debug "#{namespace} path:#{path}"
         content = ::I18n.t path, default: FAILURE_KEYWORD
         FAILURE_KEYWORD == content.to_s ? nil : content

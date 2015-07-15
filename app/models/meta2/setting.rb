@@ -28,6 +28,12 @@ module Meta2
       where app_name: app_name
     }
 
+    scope :target_sections, ->(section_name) {
+      section_name = 'parts' if section_name.blank?
+      return unless self.sections.include? section_name
+      send section_name
+    }
+
     scope :formats, -> {
       where section: 'formats'
     }

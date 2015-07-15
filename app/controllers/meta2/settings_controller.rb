@@ -3,6 +3,7 @@ module Meta2
     helper Meta2::ApplicationHelper
     helper_method :app_name_from_session
 
+    before_action :activerecord_strategy?
     before_action :set_setting, only: [:edit, :update, :destroy]
 
     def index
@@ -10,7 +11,7 @@ module Meta2
         redirect_to new_setting_path and return
       end
 
-      @settings = settings_base.all
+      @settings = settings_base.target_sections params[:section]
       @settings = @settings.page(params[:page]).per(Meta2.config.per_for_paginate)
     end
 
@@ -78,6 +79,13 @@ module Meta2
 
     def app_name_from_session
       session[Meta2.config.session_name].presence || 'meta2'
+    end
+
+    def activerecord_strategy?
+      unless :activerecord == Meta2.config.strategy.to_sym
+        Meta2.debug I18n.t('meta2.setting.message.activerecord_limited')
+        raise I18n.t('meta2.setting.message.activerecord_limited')
+      end
     end
   end
 end
