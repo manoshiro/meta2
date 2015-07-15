@@ -34,21 +34,24 @@ Active record only.
 1. bundle 'meta2' gem.
 2. Create setting file for `meta2` by install command. You can use the generator for doing this ( `% rails g meta2:install` ) Setting file is created ( `config/initializers/meta2.rb` ).
 3. Basically there is not problem with default setting, if you need to change it, Plrease change in the reference of `Setting` section.
-4. Writing helper method for meta2 ( `meta2_tags` ) into html head tag.
+4. Writing helper method for meta2 ( `meta_tags` ) into html head tag.
 5. Please configure the meta-information according strategry your choice for each page on your system.
 6. Then it's done.
 
 ## Setting ##
 
-### strategy ###
+* strategy
+You can choise `:i18n` or `:activerecord` as the storage for saving meta information. default, `i18n`.
 
-### assgn_name ###
+* assign_name
+Default `meta2`. Basically you do not need to change.
 
-### columns ###
+* columns
+Default `title`, `description` and `keyword`.
 
-### logger ###
+* logger
 
-### logging ###
+*logging
 
 ## Configuration ##
 
