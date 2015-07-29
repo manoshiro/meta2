@@ -82,7 +82,7 @@ module Meta2
     end
 
     def activerecord_strategy?
-      unless :activerecord == Meta2.config.strategy.to_sym
+      unless :active_record == Meta2.config.strategy.to_sym
         Meta2.debug I18n.t('meta2.setting.message.activerecord_limited')
         raise I18n.t('meta2.setting.message.activerecord_limited')
       end
