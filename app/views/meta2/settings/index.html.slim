@@ -11,9 +11,9 @@ ul.nav.nav-tabs
 table.table.table-borderd
   tr
     th = select_tag :section, options_for_select(I18n.t('meta2.setting.sections').to_hash.invert, selected: params[:section].presence || 'parts'), class: 'form-control', id: :meta2_activerecord_section_selecter, data: {path: settings_path}
-    th = cm 'meta2/setting.path'
-    th = cm 'meta2/setting.name'
-    th = cm 'meta2/setting.value'
-    th = cm 'meta2/setting.note'
+    th = Meta2::Setting.human_attribute_name(:path)
+    th = Meta2::Setting.human_attribute_name(:name)
+    th = Meta2::Setting.human_attribute_name(:value)
+    th = Meta2::Setting.human_attribute_name(:note)
     th
   = render partial: 'record', collection: @settings
