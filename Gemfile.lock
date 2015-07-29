@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    meta2 (0.0.1)
+    meta2 (0.0.2)
       activesupport (>= 4.0.0, < 5)
       i18n (~> 0.7.0)
 
